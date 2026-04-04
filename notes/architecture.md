@@ -74,11 +74,25 @@ LeetCode (GraphQL API)
 - Generates the README.md dashboard by reading progress.json — counts by difficulty, counts by pattern, progress bars, recent solutions table.
 - The README is fully regenerated on every run (not incrementally updated).
 
-### `.github/workflows/sync.yml` — The Glue
+### `.github/workflows/sync.yml` — Daily Sync
 - Triggers on: `push` to main (catches initial setup), `schedule` (daily 9 AM UTC), `workflow_dispatch` (manual).
-- Checks out this repo AND the `aqn96/gitleetnotes` runner repo.
+- Checks out this repo AND the `aqn96/gitleetnotes` runner repo at runtime.
 - Running the runner from a separate repo means bug fixes to the pipeline automatically apply here without touching this repo.
 - Requires permissions: `contents: write` (to commit notes), `models: read` (for GitHub Models API).
+
+### `.github/workflows/refresh.yml` — Weekly Cookie Refresh
+- Triggers on: `schedule` (weekly, Sunday midnight UTC), `workflow_dispatch` (manual).
+- Checks out `aqn96/gitleetnotes` runner and runs `src/cookie_refresher.py`.
+- Uses `LEETCODE_EMAIL` + `LEETCODE_PASSWORD` secrets to log into LeetCode headlessly via Playwright.
+- Extracts fresh `LEETCODE_SESSION` + `LEETCODE_CSRF` cookies.
+- Updates those secrets using a GitHub PAT (`GH_PAT`) with Secrets: write permission.
+- GitHub's server IPs are not flagged by LeetCode's bot detection — no CAPTCHA in Actions.
+
+### `src/cookie_refresher.py` — Headless Login Script
+- Uses Playwright Chromium in headless mode to automate LeetCode login.
+- Fills email/password, presses Enter, polls for `LEETCODE_SESSION` cookie to appear.
+- Updates repo secrets via `gh secret set` using the stored `GH_PAT`.
+- Called by `refresh.yml` in Actions (headless) and by `setup.py --setup-auto-refresh` locally (visible browser to bypass CAPTCHA on first run).
 
 ---
 
@@ -109,3 +123,30 @@ On every subsequent run, `_retry_unknown()` in `main.py`:
 - Updates the note file and progress entry in place
 
 This means rate limit failures are self-healing — they get fixed automatically on the next daily run.
+
+---
+
+## Cookie Refresh Flow
+
+```
+Weekly (Sunday midnight UTC)
+        │
+        ▼
+  refresh.yml runs on GitHub Actions
+        │
+        ├── checkout aqn96/gitleetnotes runner
+        ├── install playwright + chromium
+        └── run cookie_refresher.py
+                │
+                ├── headless Chromium login to LeetCode
+                │   (LEETCODE_EMAIL + LEETCODE_PASSWORD secrets)
+                ├── extract LEETCODE_SESSION + csrftoken cookies
+                └── gh secret set (using GH_PAT secret)
+                        │
+                        ▼
+                LEETCODE_SESSION + LEETCODE_CSRF secrets updated
+                        │
+                        ▼
+                sync.yml continues to work with fresh cookies
+```
+
