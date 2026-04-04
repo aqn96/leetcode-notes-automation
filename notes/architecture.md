@@ -80,20 +80,6 @@ LeetCode (GraphQL API)
 - Running the runner from a separate repo means bug fixes to the pipeline automatically apply here without touching this repo.
 - Requires permissions: `contents: write` (to commit notes), `models: read` (for GitHub Models API).
 
-### `.github/workflows/refresh.yml` — Weekly Cookie Refresh
-- Triggers on: `schedule` (weekly, Sunday midnight UTC), `workflow_dispatch` (manual).
-- Checks out `aqn96/gitleetnotes` runner and runs `src/cookie_refresher.py`.
-- Uses `LEETCODE_EMAIL` + `LEETCODE_PASSWORD` secrets to log into LeetCode headlessly via Playwright.
-- Extracts fresh `LEETCODE_SESSION` + `LEETCODE_CSRF` cookies.
-- Updates those secrets using a GitHub PAT (`GH_PAT`) with Secrets: write permission.
-- GitHub's server IPs are not flagged by LeetCode's bot detection — no CAPTCHA in Actions.
-
-### `src/cookie_refresher.py` — Headless Login Script
-- Uses Playwright Chromium in headless mode to automate LeetCode login.
-- Fills email/password, presses Enter, polls for `LEETCODE_SESSION` cookie to appear.
-- Updates repo secrets via `gh secret set` using the stored `GH_PAT`.
-- Called by `refresh.yml` in Actions (headless) and by `setup.py --setup-auto-refresh` locally (visible browser to bypass CAPTCHA on first run).
-
 ---
 
 ## Data Flow for a Single Solution
@@ -126,27 +112,16 @@ This means rate limit failures are self-healing — they get fixed automatically
 
 ---
 
-## Cookie Refresh Flow
+## Cookie Management
 
-```
-Weekly (Sunday midnight UTC)
-        │
-        ▼
-  refresh.yml runs on GitHub Actions
-        │
-        ├── checkout aqn96/gitleetnotes runner
-        ├── install playwright + chromium
-        └── run cookie_refresher.py
-                │
-                ├── headless Chromium login to LeetCode
-                │   (LEETCODE_EMAIL + LEETCODE_PASSWORD secrets)
-                ├── extract LEETCODE_SESSION + csrftoken cookies
-                └── gh secret set (using GH_PAT secret)
-                        │
-                        ▼
-                LEETCODE_SESSION + LEETCODE_CSRF secrets updated
-                        │
-                        ▼
-                sync.yml continues to work with fresh cookies
+LeetCode session cookies expire every few weeks. When they expire, the daily sync will fail with an authentication error.
+
+**To refresh cookies manually**, run from the `gitleetnotes` repo:
+
+```bash
+python setup.py --refresh aqn96/leetcode-notes-automation
 ```
 
+This opens a browser, you log in, and it updates `LEETCODE_SESSION` and `LEETCODE_CSRF` secrets automatically.
+
+---
