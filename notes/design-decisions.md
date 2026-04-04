@@ -75,29 +75,13 @@ Fix: `scaffold_repo()` (the push) was moved to the end of `main()`, after `confi
 
 ---
 
-## Why Cookie Auto-Refresh Is a Post-Setup Step
+## Why Manual Cookie Refresh Instead of Automation?
 
-There's a chicken-and-egg problem with the auto-refresh PAT:
+An automated Playwright-based cookie refresh was originally implemented but removed. It used headless Chromium to log into LeetCode and extract fresh cookies on a weekly schedule.
 
-- Fine-grained PATs require selecting a specific repo to scope permissions to
-- The notes repo doesn't exist until `setup.py` creates it
-- Therefore the PAT can only be created after the initial setup completes
+**Why it was removed:** LeetCode's bot detection flags Playwright browsers — even with `headless=False`, the login silently does nothing. This made the automation unreliable.
 
-This makes `--setup-auto-refresh` necessarily a separate manual step after setup, not part of the initial flow.
-
-**Workaround considered:** Use a PAT with "All repositories" scope — can be created before the repo exists. Rejected because broader permissions is worse security for marginal UX gain.
-
-**Final design:** Document it clearly as an optional post-setup step in the README.
-
----
-
-## Why GitHub Actions Doesn't Trigger CAPTCHA But Local Does
-
-LeetCode's bot detection is IP-based. Your Mac's IP (or any residential/developer IP running Playwright) is flagged because automated browsers from those IPs are a known scraping pattern.
-
-GitHub Actions runners use data center IPs from Microsoft Azure. LeetCode does not flag these — they're shared infrastructure used by millions of legitimate CI/CD pipelines.
-
-**Practical consequence:** The initial `--setup-auto-refresh` run on your Mac may show a CAPTCHA (solve it once manually). Every subsequent run in GitHub Actions works headlessly without interruption.
+**Current approach:** Run `python setup.py --refresh aqn96/leetcode-notes-automation` when cookies expire (every few weeks). It opens a real browser, you log in manually, and it updates the secrets automatically.
 
 ---
 
@@ -127,9 +111,8 @@ Every run rewrites `README.md` from scratch using `progress.json`.
 
 LeetCode has no public API. The GraphQL queries used here are the same ones their web frontend makes. This is a brittle dependency:
 
-- Session cookies expire every few weeks (handled automatically by refresh.yml if auto-refresh is configured)
+- Session cookies expire every few weeks — refresh manually with `python setup.py --refresh`
 - LeetCode could change their GraphQL schema at any time, breaking the fetcher
 - Rate limiting or IP blocks are possible if requests look suspicious
 
 This is an accepted risk for a free, zero-infrastructure tool.
-
