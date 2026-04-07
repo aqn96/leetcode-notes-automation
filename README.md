@@ -8,16 +8,16 @@
 | Difficulty | Solved |
 |---|---|
 | Easy | 11 |
-| Medium | 9 |
+| Medium | 11 |
 | Hard | 0 |
 
-**Total: 20 problems solved**
+**Total: 22 problems solved**
 
 ## Patterns Covered
 
 | Pattern | Count | Progress |
 |---|---|---|
-| Two Pointers | 5 | `█████░░░░░░░░░░░░░░░` |
+| Two Pointers | 6 | `█████░░░░░░░░░░░░░░░` |
 | Greedy | 5 | `█████░░░░░░░░░░░░░░░` |
 | Stack | 3 | `███░░░░░░░░░░░░░░░░░` |
 | Hash Map | 2 | `██░░░░░░░░░░░░░░░░░░` |
@@ -26,11 +26,14 @@
 | Bit Manipulation | 1 | `█░░░░░░░░░░░░░░░░░░░` |
 | Array | 1 | `█░░░░░░░░░░░░░░░░░░░` |
 | Sorting | 1 | `█░░░░░░░░░░░░░░░░░░░` |
+| Prefix Sum | 1 | `█░░░░░░░░░░░░░░░░░░░` |
 
 ## Recent Solutions
 
 | # | Problem | Difficulty | Pattern | Date |
 |---|---|---|---|---|
+| 917 | [Boats to Save People](solutions/two_pointers/0917_boats-to-save-people.md) | Medium | Two Pointers | 2026-04-06 |
+| 1787 | [Sum of Absolute Differences in a Sorted Array](solutions/prefix_sum/1787_sum-of-absolute-differences-in-a-sorted-array.md) | Medium | Prefix Sum | 2026-04-06 |
 | 647 | [Palindromic Substrings](solutions/two_pointers/0647_palindromic-substrings.md) | Medium | Two Pointers | 2026-03-29 |
 | 20 | [Valid Parentheses](solutions/stack/0020_valid-parentheses.md) | Easy | Stack | 2026-03-29 |
 | 560 | [Subarray Sum Equals K](solutions/hash_map/0560_subarray-sum-equals-k.md) | Medium | Hash Map | 2026-03-29 |
@@ -39,8 +42,6 @@
 | 12 | [Integer to Roman](solutions/greedy/0012_integer-to-roman.md) | Medium | Greedy | 2026-03-29 |
 | 3766 | [Maximum Median Sum of Subsequences of Size 3](solutions/greedy/3766_maximum-median-sum-of-subsequences-of-size-3.md) | Medium | Greedy | 2026-03-29 |
 | 412 | [Fizz Buzz](solutions/math/0412_fizz-buzz.md) | Easy | Math | 2026-03-28 |
-| 12 | [Integer to Roman](solutions/greedy/0012_integer-to-roman.md) | Medium | Greedy | 2026-03-28 |
-| 11 | [Container With Most Water](solutions/two_pointers/0011_container-with-most-water.md) | Medium | Two Pointers | 2026-03-15 |
 
 ---
-*Last updated: 2026-04-06*
+*Last updated: 2026-04-07*
