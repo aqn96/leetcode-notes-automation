@@ -229,17 +229,37 @@
       "lang": "python3",
       "note_path": "solutions/dynamic_programming/0072_edit-distance.md",
       "solved_on": "2026-04-09"
+    },
+    "1974151797": {
+      "problem_id": "55",
+      "title": "Jump Game",
+      "slug": "jump-game",
+      "difficulty": "Medium",
+      "pattern": "Greedy",
+      "lang": "python3",
+      "note_path": "solutions/greedy/0055_jump-game.md",
+      "solved_on": "2026-04-10"
+    },
+    "1974131549": {
+      "problem_id": "122",
+      "title": "Best Time to Buy and Sell Stock II",
+      "slug": "best-time-to-buy-and-sell-stock-ii",
+      "difficulty": "Medium",
+      "pattern": "Greedy",
+      "lang": "python3",
+      "note_path": "solutions/greedy/0122_best-time-to-buy-and-sell-stock-ii.md",
+      "solved_on": "2026-04-10"
     }
   },
   "by_difficulty": {
-    "Medium": 12,
+    "Medium": 14,
     "Easy": 11
   },
   "by_pattern": {
     "Two Pointers": 6,
     "Stack": 3,
     "Hash Map": 2,
-    "Greedy": 5,
+    "Greedy": 7,
     "Math": 1,
     "String": 1,
     "Bit Manipulation": 1,
@@ -271,17 +291,22 @@
     "1962403000",
     "1970709210",
     "1970722383",
-    "1973059829"
+    "1973059829",
+    "1974131549",
+    "1974134497",
+    "1974151797"
   ],
   "seen_problem_keys": [
     "slug:3sum",
     "slug:best-time-to-buy-and-sell-stock",
+    "slug:best-time-to-buy-and-sell-stock-ii",
     "slug:binary-gap",
     "slug:boats-to-save-people",
     "slug:container-with-most-water",
     "slug:edit-distance",
     "slug:fizz-buzz",
     "slug:integer-to-roman",
+    "slug:jump-game",
     "slug:longest-common-prefix",
     "slug:majority-element",
     "slug:maximum-median-sum-of-subsequences-of-size-3",

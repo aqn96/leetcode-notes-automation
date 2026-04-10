@@ -8,18 +8,18 @@
 | Difficulty | Solved |
 |---|---|
 | Easy | 11 |
-| Medium | 12 |
+| Medium | 14 |
 | Hard | 0 |
 
-**Total: 23 problems solved**
+**Total: 25 problems solved**
 
 ## Patterns Covered
 
 | Pattern | Count | Progress |
 |---|---|---|
+| Greedy | 7 | `██████░░░░░░░░░░░░░░` |
 | Two Pointers | 6 | `█████░░░░░░░░░░░░░░░` |
-| Greedy | 5 | `████░░░░░░░░░░░░░░░░` |
-| Stack | 3 | `███░░░░░░░░░░░░░░░░░` |
+| Stack | 3 | `██░░░░░░░░░░░░░░░░░░` |
 | Hash Map | 2 | `██░░░░░░░░░░░░░░░░░░` |
 | Math | 1 | `█░░░░░░░░░░░░░░░░░░░` |
 | String | 1 | `█░░░░░░░░░░░░░░░░░░░` |
@@ -33,6 +33,8 @@
 
 | # | Problem | Difficulty | Pattern | Date |
 |---|---|---|---|---|
+| 55 | [Jump Game](solutions/greedy/0055_jump-game.md) | Medium | Greedy | 2026-04-10 |
+| 122 | [Best Time to Buy and Sell Stock II](solutions/greedy/0122_best-time-to-buy-and-sell-stock-ii.md) | Medium | Greedy | 2026-04-10 |
 | 72 | [Edit Distance](solutions/dynamic_programming/0072_edit-distance.md) | Medium | Dynamic Programming | 2026-04-09 |
 | 917 | [Boats to Save People](solutions/two_pointers/0917_boats-to-save-people.md) | Medium | Two Pointers | 2026-04-06 |
 | 1787 | [Sum of Absolute Differences in a Sorted Array](solutions/prefix_sum/1787_sum-of-absolute-differences-in-a-sorted-array.md) | Medium | Prefix Sum | 2026-04-06 |
@@ -41,8 +43,6 @@
 | 560 | [Subarray Sum Equals K](solutions/hash_map/0560_subarray-sum-equals-k.md) | Medium | Hash Map | 2026-03-29 |
 | 9 | [Palindrome Number](solutions/two_pointers/0009_palindrome-number.md) | Easy | Two Pointers | 2026-03-29 |
 | 20 | [Valid Parentheses](solutions/stack/0020_valid-parentheses.md) | Easy | Stack | 2026-03-29 |
-| 12 | [Integer to Roman](solutions/greedy/0012_integer-to-roman.md) | Medium | Greedy | 2026-03-29 |
-| 3766 | [Maximum Median Sum of Subsequences of Size 3](solutions/greedy/3766_maximum-median-sum-of-subsequences-of-size-3.md) | Medium | Greedy | 2026-03-29 |
 
 ---
-*Last updated: 2026-04-09*
+*Last updated: 2026-04-10*
