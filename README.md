@@ -45,4 +45,4 @@
 | 20 | [Valid Parentheses](solutions/stack/0020_valid-parentheses.md) | Easy | Stack | 2026-03-29 |
 
 ---
-*Last updated: 2026-04-16*
+*Last updated: 2026-04-17*
