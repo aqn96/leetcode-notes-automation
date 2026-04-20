@@ -8,23 +8,23 @@
 | Difficulty | Solved |
 |---|---|
 | Easy | 11 |
-| Medium | 14 |
+| Medium | 16 |
 | Hard | 0 |
 
-**Total: 25 problems solved**
+**Total: 27 problems solved**
 
 ## Patterns Covered
 
 | Pattern | Count | Progress |
 |---|---|---|
-| Greedy | 7 | `██████░░░░░░░░░░░░░░` |
-| Two Pointers | 6 | `█████░░░░░░░░░░░░░░░` |
+| Greedy | 8 | `██████░░░░░░░░░░░░░░` |
+| Two Pointers | 6 | `████░░░░░░░░░░░░░░░░` |
 | Stack | 3 | `██░░░░░░░░░░░░░░░░░░` |
-| Hash Map | 2 | `██░░░░░░░░░░░░░░░░░░` |
+| Hash Map | 2 | `█░░░░░░░░░░░░░░░░░░░` |
+| Array | 2 | `█░░░░░░░░░░░░░░░░░░░` |
 | Math | 1 | `█░░░░░░░░░░░░░░░░░░░` |
 | String | 1 | `█░░░░░░░░░░░░░░░░░░░` |
 | Bit Manipulation | 1 | `█░░░░░░░░░░░░░░░░░░░` |
-| Array | 1 | `█░░░░░░░░░░░░░░░░░░░` |
 | Sorting | 1 | `█░░░░░░░░░░░░░░░░░░░` |
 | Prefix Sum | 1 | `█░░░░░░░░░░░░░░░░░░░` |
 | Dynamic Programming | 1 | `█░░░░░░░░░░░░░░░░░░░` |
@@ -33,6 +33,8 @@
 
 | # | Problem | Difficulty | Pattern | Date |
 |---|---|---|---|---|
+| 274 | [H-Index](solutions/array/0274_h-index.md) | Medium | Array | 2026-04-17 |
+| 45 | [Jump Game II](solutions/greedy/0045_jump-game-ii.md) | Medium | Greedy | 2026-04-17 |
 | 55 | [Jump Game](solutions/greedy/0055_jump-game.md) | Medium | Greedy | 2026-04-10 |
 | 122 | [Best Time to Buy and Sell Stock II](solutions/greedy/0122_best-time-to-buy-and-sell-stock-ii.md) | Medium | Greedy | 2026-04-10 |
 | 72 | [Edit Distance](solutions/dynamic_programming/0072_edit-distance.md) | Medium | Dynamic Programming | 2026-04-09 |
@@ -41,8 +43,6 @@
 | 647 | [Palindromic Substrings](solutions/two_pointers/0647_palindromic-substrings.md) | Medium | Two Pointers | 2026-03-29 |
 | 20 | [Valid Parentheses](solutions/stack/0020_valid-parentheses.md) | Easy | Stack | 2026-03-29 |
 | 560 | [Subarray Sum Equals K](solutions/hash_map/0560_subarray-sum-equals-k.md) | Medium | Hash Map | 2026-03-29 |
-| 9 | [Palindrome Number](solutions/two_pointers/0009_palindrome-number.md) | Easy | Two Pointers | 2026-03-29 |
-| 20 | [Valid Parentheses](solutions/stack/0020_valid-parentheses.md) | Easy | Stack | 2026-03-29 |
 
 ---
-*Last updated: 2026-04-17*
+*Last updated: 2026-04-20*

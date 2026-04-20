@@ -249,21 +249,41 @@
       "lang": "python3",
       "note_path": "solutions/greedy/0122_best-time-to-buy-and-sell-stock-ii.md",
       "solved_on": "2026-04-10"
+    },
+    "1981287057": {
+      "problem_id": "274",
+      "title": "H-Index",
+      "slug": "h-index",
+      "difficulty": "Medium",
+      "pattern": "Array",
+      "lang": "python3",
+      "note_path": "solutions/array/0274_h-index.md",
+      "solved_on": "2026-04-17"
+    },
+    "1981269271": {
+      "problem_id": "45",
+      "title": "Jump Game II",
+      "slug": "jump-game-ii",
+      "difficulty": "Medium",
+      "pattern": "Greedy",
+      "lang": "python3",
+      "note_path": "solutions/greedy/0045_jump-game-ii.md",
+      "solved_on": "2026-04-17"
     }
   },
   "by_difficulty": {
-    "Medium": 14,
+    "Medium": 16,
     "Easy": 11
   },
   "by_pattern": {
     "Two Pointers": 6,
     "Stack": 3,
     "Hash Map": 2,
-    "Greedy": 7,
+    "Greedy": 8,
     "Math": 1,
     "String": 1,
     "Bit Manipulation": 1,
-    "Array": 1,
+    "Array": 2,
     "Sorting": 1,
     "Prefix Sum": 1,
     "Dynamic Programming": 1
@@ -294,7 +314,9 @@
     "1973059829",
     "1974131549",
     "1974134497",
-    "1974151797"
+    "1974151797",
+    "1981269271",
+    "1981287057"
   ],
   "seen_problem_keys": [
     "slug:3sum",
@@ -305,8 +327,10 @@
     "slug:container-with-most-water",
     "slug:edit-distance",
     "slug:fizz-buzz",
+    "slug:h-index",
     "slug:integer-to-roman",
     "slug:jump-game",
+    "slug:jump-game-ii",
     "slug:longest-common-prefix",
     "slug:majority-element",
     "slug:maximum-median-sum-of-subsequences-of-size-3",
