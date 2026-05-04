@@ -45,4 +45,4 @@
 | 560 | [Subarray Sum Equals K](solutions/hash_map/0560_subarray-sum-equals-k.md) | Medium | Hash Map | 2026-03-29 |
 
 ---
-*Last updated: 2026-05-03*
+*Last updated: 2026-05-04*
